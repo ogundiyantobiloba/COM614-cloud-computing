@@ -153,6 +153,23 @@ services:
       frontend:
         ipv4_address: 172.20.0.25
 
+  snmpsim:
+    build: ./container-fs/snmpsim
+    container_name: snmpsim
+    hostname: draytek
+    environment:
+      EXTRA_FLAGS: "--v3-user=testing --v3-auth-key=testing123"
+    ports:
+      - "11661:161/udp"
+    volumes:
+      - ./container-fs/snmpsim/data/draytek.snmprec:/usr/local/snmpsim/data/draytek.snmprec
+      - ./container-fs/snmpsim/mibs:/usr/local/snmpsim/mibs
+    networks:
+      frontend:
+        ipv4_address: 172.20.0.35
+
+
+
   # minion with ssl
 #  minion2:
 #    image: ${DOCKER_REGISTRY:-docker.io}/${DOCKER_ORG:-opennms}/${MINION_OCI:-minion}:${ONMS_VERSION:-bleeding}

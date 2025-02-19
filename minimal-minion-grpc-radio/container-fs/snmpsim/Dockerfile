@@ -5,7 +5,7 @@ RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.
     apt-get install -y --no-install-recommends \
     snmp \
     iputils-ping
-    
+
 #RUN pip install snmpsim
 
 #RUN adduser --system snmpsim
