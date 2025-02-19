@@ -1,6 +1,3 @@
----
-version: '3'
-
 # using fixed ip addresses so opennms provisoning config works
 # to see all network use docker network ls
 # to see config use docker network inspect minimal-minion-grpc_frontend
@@ -68,7 +65,7 @@ services:
       TZ: ${TIMEZONE:-America/New_York}
       # JAVA_OPTS matches default in container plus enable debugger
       # extenal jdb connection from windows using  jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8001
-      JAVA_OPTS: -Xmx1024m -XX:MaxMetaspaceSize=512m -agentlib:jdwp=transport=dt_socket,server=y,address=*:8001,suspend=n
+      JAVA_OPTS: -Xmx2048m -XX:MaxMetaspaceSize=512m -agentlib:jdwp=transport=dt_socket,server=y,address=*:8001,suspend=n
     volumes:
       - data-opennms:/opennms-data
       - data-opennms-cfg:/opt/opennms/etc

@@ -1,0 +1,7 @@
+<datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection" name="daytrek-wireles">
+    <group name="draytekMinimal" ifType="ignore">
+        <mibObj oid=".1.3.6.1.4.1.7367.2.1.1" instance="0" alias="connectedTunnels" type="integer32"/>
+        <mibObj oid=".1.3.6.1.4.1.7367.2.1.5" instance="0" alias="connecteVPNClientIP" type="octetstring"/>
+        <mibObj oid=".1.3.6.1.4.1.7367.2.2.3" instance="0" alias="lan2LanProfilename" type="octetstring"/>
+    </group>
+</datacollection-group>
